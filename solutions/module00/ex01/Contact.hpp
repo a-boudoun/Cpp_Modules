@@ -23,11 +23,11 @@ class Contact{
 		str	get_PhoneNumber();
 		str	get_DarkestSecret();
 
-		void	set_FirstName(str);
-		void	set_LastName(str);
-		void	set_NickName(str);
-		void	set_PhoneNumber(str);
-		void	set_DarkestSecret(str);
+		void	set_FirstName(str first_name);
+		void	set_LastName(str last_name);
+		void	set_NickName(str nickname);
+		void	set_PhoneNumber(str phone_number);
+		void	set_DarkestSecret(str darkest_secret);
 };
 #endif
 #endif

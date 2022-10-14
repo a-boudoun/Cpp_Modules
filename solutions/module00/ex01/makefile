@@ -1,15 +1,15 @@
 NAME = phoneBook
-FLAGS = -Wall -Wextra -Werror
-C = clang++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+C = c++
 
 SRC =  main.cpp PhoneBook.cpp Contact.cpp
 OBJ = $(SRC:.cpp=.o)
 
-%.o: %.cpp
+%.o: %.cpp Contact.hpp PhoneBook.hpp
 	@$(C) $(FLAGS) -c $<
 
 all: $(NAME)
-$(NAME):
+$(NAME): $(OBJ)
 	@$(C) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:

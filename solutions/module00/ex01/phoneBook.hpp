@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:39:43 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/14 13:58:36 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:17:29 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class PhoneBook
 {
 	private:
-		static int index;
+		int index;
 		Contact contact[8];
 
 	public:

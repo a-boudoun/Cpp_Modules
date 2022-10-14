@@ -6,11 +6,11 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:21:36 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/14 13:59:16 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:25:03 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phoneBook.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
@@ -19,10 +19,61 @@ PhoneBook::PhoneBook()
 
 int PhoneBook::get_index()
 {
-	return (this->index);
+	return (this->index % 8);
 }
 
-void PhoneBook::add()
+void	PhoneBook::exit()
 {
-	
+	std::cout<<"Exit"<<std::endl;
+	std::exit(0);
+}
+
+void	PhoneBook::add()
+{
+	int i;
+
+	i = this->get_index();
+	str first_name;
+	str last_name;
+	str nickname;
+	str phone_number;
+	str darkest_secret;
+	std::cout<<"please enter first name : ";
+	std::cin>>first_name;
+	std::cout<<"please enter last name : ";
+	std::cin>>last_name;
+	std::cout<<"please enter nickname : ";
+	std::cin>>nickname;
+	std::cout<<"please enter phone number : ";
+	std::cin>>phone_number;
+	std::cout<<"please enter darkest secret : ";
+	std::cin>>darkest_secret;
+	this->contact[i].set_FirstName(first_name);
+	this->contact[i].set_LastName(last_name);
+	this->contact[i].set_NickName(nickname);
+	this->contact[i].set_PhoneNumber(phone_number);
+	this->contact[i].set_DarkestSecret(darkest_secret);
+	std::cout<<"Contact added"<<std::endl;
+	this->index++;
+}
+
+void	PhoneBook::search()
+{
+	int	count;
+
+	// count = 8 ? this->index > 8 : this->index;
+	if (this->index < 8)
+		count = this->index;
+	else
+		count = 8;
+	for (int i = 0; i < count; i++)
+	{
+		std::cout<<i<<"|";
+		std::cout<<this->contact[i].get_FirstName()<<"|";
+		std::cout<<this->contact[i].get_LastName()<<"|";
+		std::cout<<this->contact[i].get_NickName()<<"|";
+		std::cout<<this->contact[i].get_PhoneNumber()<<"|";
+		std::cout<<this->contact[i].get_DarkestSecret()<<"|";
+		std::cout<<std::endl;
+	}
 }

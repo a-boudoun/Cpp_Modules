@@ -6,28 +6,27 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:58:53 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/12 15:51:26 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:25:27 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phoneBook.hpp"
+#include "PhoneBook.hpp"
 
 int main()
 {
-	PhoneBook	Contact;
+	PhoneBook	Phonebook;
 	std::string	command;
-
 	while (1)
 	{
-		std::cout << "Enter a command: ";
+		std::cout<<"please enter a command : ADD SEARCH or EXIT : ";
 		std::cin >> command;
-		if (command == "ADD")
-			Contact.add_contact(Contact.get_contactNb());
+		if (command == "EXIT")
+			Phonebook.exit();
+		else if (command == "ADD")
+			Phonebook.add();
 		else if (command == "SEARCH")
-			Contact.search_contact(Contact.get_contactNb());
-		else if (command == "EXIT")
-			Contact.exit_contact();
+			Phonebook.search();
 		else
-			std::cout << "Invalid command" << std::endl;
+			std::cout<<"Invalid command"<<std::endl<<"please enter a command : ADD SEARCH or EXIT : ";
 	}
 }
