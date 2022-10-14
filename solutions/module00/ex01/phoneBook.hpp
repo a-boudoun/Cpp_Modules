@@ -6,19 +6,17 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:39:43 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/12 19:33:57 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/14 13:58:36 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include <iostream>
 # include "Contact.hpp"
 
 # ifndef PHONEBOOK
 # define PHONEBOOK
-#define str std::string
 
 class PhoneBook
 {
@@ -27,10 +25,11 @@ class PhoneBook
 		Contact contact[8];
 
 	public:
-		void	add_contact(Contact *contact);
-		void	search_contact(Contact *contact);
-		void	exit_contact(void);
 		PhoneBook();
+		void	add();
+		void	search();
+		void	exit();
+		int		get_index();
 };
 
 # endif
