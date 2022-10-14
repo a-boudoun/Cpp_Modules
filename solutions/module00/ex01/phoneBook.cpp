@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:21:36 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/14 16:25:03 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:49:07 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ void	PhoneBook::add()
 	str phone_number;
 	str darkest_secret;
 	std::cout<<"please enter first name : ";
-	std::cin>>first_name;
+	getline(std::cin, first_name);
 	std::cout<<"please enter last name : ";
-	std::cin>>last_name;
+	getline(std::cin, last_name);
 	std::cout<<"please enter nickname : ";
-	std::cin>>nickname;
+	getline(std::cin, nickname);
 	std::cout<<"please enter phone number : ";
-	std::cin>>phone_number;
+	getline(std::cin, phone_number);
 	std::cout<<"please enter darkest secret : ";
-	std::cin>>darkest_secret;
+	getline(std::cin, darkest_secret);
 	this->contact[i].set_FirstName(first_name);
 	this->contact[i].set_LastName(last_name);
 	this->contact[i].set_NickName(nickname);
