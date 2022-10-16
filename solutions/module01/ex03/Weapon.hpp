@@ -2,7 +2,8 @@
 #define WEAPON_HPP
 
 #include <iostream>
-
+#include"HumanA.hpp"
+#include"HumanB.hpp"
 #ifndef WEAPON
 #define WEAPON
 

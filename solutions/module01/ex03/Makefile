@@ -1,9 +1,9 @@
-NAME = Wopen
-HEADER = Wopen.hpp
+NAME = Weapon
+HEADER = Weapon.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 C = c++
 
-SRC = Wopen.cpp main.cpp HumanA.cpp HumanB.cpp
+SRC = Weapon.cpp main.cpp HumanA.cpp HumanB.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
