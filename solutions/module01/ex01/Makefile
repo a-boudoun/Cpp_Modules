@@ -1,11 +1,13 @@
-NAME = phonebook
+NAME = Zombies
+HEADER = Zombie.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 C = c++
 
-SRC =  main.cpp PhoneBook.cpp Contact.cpp
+SRC = Zombie.cpp main.cpp zombieHorde.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
-%.o: %.cpp Contact.hpp PhoneBook.hpp
+%.o: %.cpp $(HEADER)
 	$(C) $(FLAGS) -c $<
 
 all: $(NAME)

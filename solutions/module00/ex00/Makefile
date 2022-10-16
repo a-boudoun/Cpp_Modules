@@ -6,11 +6,11 @@ SRC = megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
 
 %.o: %.cpp
-	@$(C) $(FLAGS) -c $<
+	$(C) $(FLAGS) -c $<
 
 all: $(NAME)
 $(NAME):
-	@$(C) $(FLAGS) $(SRC) -o $(NAME)
+	$(C) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	@rm -f $(OBJ)

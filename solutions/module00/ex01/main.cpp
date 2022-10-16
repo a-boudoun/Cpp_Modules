@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:58:53 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/16 13:50:00 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:17:52 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ int main()
 		else
 			std::cout<<"Invalid command"<<std::endl;
 	}
+	return(0);
 }
