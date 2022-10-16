@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:21:36 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/16 12:38:03 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:14:51 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,13 @@ int PhoneBook::GetIndex()
 	return (this->index % 8);
 }
 
-void	PhoneBook::exit()
+str	PhoneBook::truncate(str s)
 {
-	std::cout<<"Exit"<<std::endl;
-	std::exit(0);
+	if (s.length() > 10)
+		return (s.substr(0, 9) + ".");
+	return (s);
 }
+
 
 void	PhoneBook::add()
 {
@@ -68,17 +70,43 @@ void	PhoneBook::add()
 void	PhoneBook::search()
 {
 	int	count;
+	int	index;
 
 	count = this->index < 8 ? this->index : 8;
-	
+
+	if (count == 0)
+	{
+		std::cout<<"No contacts to search"<<std::endl;
+		return ;
+	}
+	std::cout<<std::setw(10)<<"Index"<<" | ";
+	std::cout<<std::setw(10)<<"First Name"<<" | ";
+	std::cout<<std::setw(10)<<"Last Name"<<" | ";
+	std::cout<<std::setw(10)<<"Nickname"<<std::endl;
 	for (int i = 0; i < count; i++)
 	{
-		std::cout<<i<<"|";
-		std::cout<<this->contact[i].GetFirstName()<<"|";
-		std::cout<<this->contact[i].GetLastName()<<"|";
-		std::cout<<this->contact[i].GetNickName()<<"|";
-		std::cout<<this->contact[i].GetPhoneNumber()<<"|";
-		std::cout<<this->contact[i].GetDarkestSecret()<<"|";
+		std::cout<<std::setw(10)<<i<<" | ";
+		std::cout<<std::setw(10)<<truncate(this->contact[i].GetFirstName())<<" | ";
+		std::cout<<std::setw(10)<<truncate(this->contact[i].GetLastName())<<" | ";
+		std::cout<<std::setw(10)<<truncate(this->contact[i].GetNickName())<<std::endl;
 		std::cout<<std::endl;
 	}
+
+	std::cout<<"Please enter the index of the contact you want to see: ";
+	if (!(std::cin>>index) || index < 0 || index > count - 1)
+	{
+		std::cout<<"No cntact with this index"<<std::endl;
+		return ;
+	}
+	std::cout<<"First Name: "<<this->contact[index].GetFirstName()<<std::endl;
+	std::cout<<"Last Name: "<<this->contact[index].GetLastName()<<std::endl;
+	std::cout<<"Nickname: "<<this->contact[index].GetNickName()<<std::endl;
+	std::cout<<"Phone Number: "<<this->contact[index].GetPhoneNumber()<<std::endl;
+	std::cout<<"Darkest Secret: "<<this->contact[index].GetDarkestSecret()<<std::endl;
+}
+
+void	PhoneBook::exit()
+{
+	std::cout<<"Exit"<<std::endl;
+	std::exit(0);
 }

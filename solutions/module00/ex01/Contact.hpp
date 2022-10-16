@@ -5,7 +5,9 @@
 #ifndef CONTACT
 #define CONTACT
 
-# include <iostream>
+#include <iostream>
+#include <iomanip>
+
 #define str std::string
 
 class Contact{

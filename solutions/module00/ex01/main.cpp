@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:58:53 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/16 12:35:22 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/16 13:50:00 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 
 	while (1)
 	{
-		std::cout<<"please enter a command : ADD SEARCH or EXIT : ";
+		std::cout<<"please enter ADD SEARCH or EXIT : ";
 		if (!std::getline(std::cin, command))
 		{
 			std::cout<<"Invalid input"<<std::endl;
