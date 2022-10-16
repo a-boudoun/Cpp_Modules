@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:58:53 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/14 16:56:00 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/16 12:35:22 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ int main()
 	while (1)
 	{
 		std::cout<<"please enter a command : ADD SEARCH or EXIT : ";
-		getline(std::cin, command);
-		if (command.empty())
-			command = " ";
+		if (!std::getline(std::cin, command))
+		{
+			std::cout<<"Invalid input"<<std::endl;
+			std::exit(0);
+		}
 		else if (command == "EXIT")
 			Phonebook.exit();
 		else if (command == "ADD")

@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:39:43 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/14 16:17:29 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/16 12:32:40 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,14 @@ class PhoneBook
 	private:
 		int index;
 		Contact contact[8];
+		str	requestInfo(str info);
 
 	public:
 		PhoneBook();
 		void	add();
 		void	search();
 		void	exit();
-		int		get_index();
+		int		GetIndex();
 };
 
 # endif

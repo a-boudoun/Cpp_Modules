@@ -17,11 +17,11 @@ class Contact{
 		str	darkest_secret;
 	public:
 		Contact();
-		str	get_FirstName();
-		str	get_LastName();
-		str	get_NickName();
-		str	get_PhoneNumber();
-		str	get_DarkestSecret();
+		str	GetFirstName();
+		str	GetLastName();
+		str	GetNickName();
+		str	GetPhoneNumber();
+		str	GetDarkestSecret();
 
 		void	set_FirstName(str first_name);
 		void	set_LastName(str last_name);

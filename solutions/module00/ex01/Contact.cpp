@@ -9,27 +9,27 @@ Contact::Contact()
 	this->phone_number = "";
 }
 
-str	Contact::get_FirstName()
+str	Contact::GetFirstName()
 {
 	return(this->first_name);
 }
 
-str	Contact::get_LastName()
+str	Contact::GetLastName()
 {
 	return(this->last_name);
 }
 
-str	Contact::get_NickName()
+str	Contact::GetNickName()
 {
 	return(this->nickname);
 }
 
-str	Contact::get_PhoneNumber()
+str	Contact::GetPhoneNumber()
 {
 	return(this->phone_number);
 }
 
-str	Contact::get_DarkestSecret()
+str	Contact::GetDarkestSecret()
 {
 	return(this->darkest_secret);
 }
