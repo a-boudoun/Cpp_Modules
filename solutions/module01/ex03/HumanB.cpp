@@ -22,7 +22,7 @@ void	HumanB::attack(void)
 	if (this->weapon)
 		std::cout<<this->name<<" attacks with his "<<this->weapon->getType()<<std::endl;
 	else
-		std::cout<<this->name<<" attacks with his "<<std::endl;
+		std::cout<<this->name<<" has no weapon "<<std::endl;
 }
 
 

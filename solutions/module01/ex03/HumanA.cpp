@@ -8,7 +8,6 @@ HumanA::HumanA(std::string name, Weapon& weapon)
 	this->weapon = weapon;
 }
 
-HumanA::HumanA()
 {
 	this->name = "";
 	this->weapon = Weapon();
