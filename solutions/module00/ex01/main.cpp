@@ -6,11 +6,12 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:58:53 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/18 15:26:58 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/18 17:23:16 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <cstdlib>
 
 int main()
 {
@@ -24,7 +25,7 @@ int main()
 		if (!std::cin.good())
 		{
 			std::cout<<"Invalid input"<<std::endl;
-			std::exit(0);
+			exit(0);
 		}
 		else if (command == "EXIT")
 			Phonebook.exit();
