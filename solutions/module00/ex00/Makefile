@@ -9,7 +9,7 @@ OBJ = $(SRC:.cpp=.o)
 	$(C) $(FLAGS) -c $<
 
 all: $(NAME)
-$(NAME):
+$(NAME): $(OBJ)
 	$(C) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
