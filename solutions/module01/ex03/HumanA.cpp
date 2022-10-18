@@ -2,18 +2,11 @@
 #include"HumanB.hpp"
 #include"Weapon.hpp"
 
-HumanA::HumanA(std::string name, Weapon& weapon)
-{
-	this->name = name;
-	this->weapon = weapon;
-}
-
-{
-	this->name = "";
-	this->weapon = Weapon();
-}
+HumanA::HumanA(std::string name, Weapon& w) : name(name), weapon(w)
+{}
 
 void	HumanA::attack(void)
 {
 	std::cout<<this->name<<" attacks with his "<<this->weapon.getType()<<std::endl;
 }
+

@@ -1,10 +1,6 @@
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#pragma once
 
 #include "Weapon.hpp"
-
-#ifndef HUMANB
-#define HUMANB
 
 class HumanB{
 	private:
@@ -13,9 +9,6 @@ class HumanB{
 	public:
 		HumanB();
 		HumanB(std::string name);
-		void	setWeapon(Weapon *weapon);
+		void	setWeapon(Weapon &weapon);
 		void	attack(void);
 };
-
-#endif
-#endif
