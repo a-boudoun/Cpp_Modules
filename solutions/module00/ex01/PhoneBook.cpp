@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:21:36 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/18 17:25:30 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/18 17:35:47 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	PhoneBook::search()
 
 	std::cout<<"Please enter the index of the contact you want to see: ";
 	std::cin>>index;
-	if (std::cin.good())
+	if (!std::cin.good())
 	{
 		std::cout<<"invalid input"<<std::endl;
 		std::exit(0);
