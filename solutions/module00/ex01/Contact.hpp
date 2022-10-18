@@ -1,9 +1,5 @@
 
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
-
-#ifndef CONTACT
-#define CONTACT
+#pragma once
 
 #include <iostream>
 #include <iomanip>
@@ -31,5 +27,3 @@ class Contact{
 		void	set_PhoneNumber(str phone_number);
 		void	set_DarkestSecret(str darkest_secret);
 };
-#endif
-#endif

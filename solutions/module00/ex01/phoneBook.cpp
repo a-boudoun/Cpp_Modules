@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:21:36 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/16 14:14:51 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:28:45 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ str	PhoneBook::requestInfo(str info)
 		std::cout<<"Invalid input"<<std::endl;
 		std::exit(0);
 	}
+	if (input.empty())
+		requestInfo(info);
 	return (input);
 }
 
@@ -70,7 +72,7 @@ void	PhoneBook::add()
 void	PhoneBook::search()
 {
 	int	count;
-	int	index;
+	int	index = 0;
 
 	count = this->index < 8 ? this->index : 8;
 
@@ -93,16 +95,23 @@ void	PhoneBook::search()
 	}
 
 	std::cout<<"Please enter the index of the contact you want to see: ";
-	if (!(std::cin>>index) || index < 0 || index > count - 1)
+	std::cin>>index;
+	if (std::cin.good())
 	{
-		std::cout<<"No cntact with this index"<<std::endl;
-		return ;
+		std::cout<<"invalid input"<<std::endl;
+		std::exit(0);
 	}
-	std::cout<<"First Name: "<<this->contact[index].GetFirstName()<<std::endl;
-	std::cout<<"Last Name: "<<this->contact[index].GetLastName()<<std::endl;
-	std::cout<<"Nickname: "<<this->contact[index].GetNickName()<<std::endl;
-	std::cout<<"Phone Number: "<<this->contact[index].GetPhoneNumber()<<std::endl;
-	std::cout<<"Darkest Secret: "<<this->contact[index].GetDarkestSecret()<<std::endl;
+	
+	if (index <= count - 1 && index >= 0)
+	{
+		std::cout<<"First Name: "<<this->contact[index].GetFirstName()<<std::endl;
+		std::cout<<"Last Name: "<<this->contact[index].GetLastName()<<std::endl;
+		std::cout<<"Nickname: "<<this->contact[index].GetNickName()<<std::endl;
+		std::cout<<"Phone Number: "<<this->contact[index].GetPhoneNumber()<<std::endl;
+		std::cout<<"Darkest Secret: "<<this->contact[index].GetDarkestSecret()<<std::endl;
+	}
+	else
+		std::cout<<"No cntact with this index"<<std::endl;
 }
 
 void	PhoneBook::exit()
