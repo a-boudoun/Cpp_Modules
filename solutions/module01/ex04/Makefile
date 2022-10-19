@@ -2,7 +2,7 @@ NAME = replace
 FLAGS = -Wall -Wextra -Werror -std=c++98
 C = c++
 
-SRC = main.cpp
+SRC = main.cpp Replace.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -17,7 +17,7 @@ clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) *.replace
 
 re: fclean all
 
