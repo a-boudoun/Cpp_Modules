@@ -32,8 +32,6 @@ void	Replace::sedPro(std::string toFind, std::string NewOne)
 		NewFile.close();
 	}
 	else
-	{
 		std::cerr<<"please make sure the file is there"<<std::endl;
-	}
 	myFile.close();
 }
