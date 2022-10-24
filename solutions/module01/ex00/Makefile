@@ -3,7 +3,7 @@ HEADER = Zombie.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 C = c++
 
-SRC = Zombie.cpp main.cpp
+SRC = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 %.o: %.cpp $(HEADER)

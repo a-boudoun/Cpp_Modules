@@ -5,7 +5,12 @@ int	main(int ac, char **av)
 {
 	if (ac != 4)
 	{
-		cerr<<"usage: ./replace <filename> <str to find> <str to replace with>"<<endl;
+		cerr<<"usage: "<<av[0]<<"<filename> <str to find> <str to replace with>"<<endl;
+		return (0);
+	}
+	else if (av[2][0] == '\0' || av[3][0] == '\0')
+	{
+		cerr<<"invalid argument"<<endl;
 		return (0);
 	}
 	else

@@ -26,12 +26,12 @@ void	Replace::sedPro(std::string toFind, std::string NewOne)
 		while ( p != std::string::npos ) {
 			content.erase(p, toFind.length());
 			content.insert(p, NewOne);
-			p = content.find(toFind);
+			p = content.find(toFind, p + NewOne.length());
 		}
 		NewFile << content;
 		NewFile.close();
+		myFile.close();
 	}
 	else
 		std::cerr<<"please make sure the file is there"<<std::endl;
-	myFile.close();
 }
