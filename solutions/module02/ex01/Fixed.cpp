@@ -1,4 +1,4 @@
-#include "Fixed.hpp"
+#include"Fixed.hpp"
 
 const int Fixed::fraction_bits = 8;
 
@@ -30,3 +30,5 @@ void Fixed::operator = (const Fixed &obj){
 	fixed_value = obj.fixed_value;
 	std::cout << "Copy assignment operator called" << std::endl;
 }
+//................................................................................................
+
