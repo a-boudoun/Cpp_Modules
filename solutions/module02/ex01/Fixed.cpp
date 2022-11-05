@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/05 18:17:36 by aboudoun          #+#    #+#             */
+/*   Updated: 2022/11/05 18:17:37 by aboudoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 Half Precision (16 bit): 1 sign bit, 5 bit exponent, and 10 bit mantissa
 Single Precision (32 bit): 1 sign bit, 8 bit exponent, and 23 bit mantissa
