@@ -43,6 +43,27 @@ void ClapTrap::beRepaired(unsigned int amount){
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
-	std::cout<<"ClapTrap"<<name<<"is taking"<<amount<<"damage"<<std::endl;
+	if (hitPoints <= amount) {
+		std::cout << "ClapTrap " << name << "is dead" << std::endl;
+		hitPoints = 0;
+		return;
+	}
 	hitPoints -= amount ? (amount <= hitPoints) : hitPoints;
+	std::cout<<"ClapTrap"<<name<<"is taking"<<amount<<"damage"<<std::endl;
+}
+
+void ClapTrap::setName(std::string NewName){
+	name = NewName;
+}
+
+void ClapTrap::setAttackDamage(unsigned int amount){
+	attackDamage = amount;
+}
+
+std::string ClapTrap::getName(){
+	return name;
+}
+
+unsigned int ClapTrap::getAttackDamage(){
+	return attackDamage;
 }

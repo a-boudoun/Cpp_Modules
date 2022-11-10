@@ -17,4 +17,8 @@ class ClapTrap{
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		void setName(std::string NewName);
+		void setAttackDamage(unsigned int amount);
+		std::string getName();
+		unsigned int getAttackDamage();
 };
