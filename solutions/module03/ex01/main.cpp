@@ -1,10 +1,11 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap leet("1337");
-	ClapTrap ofppt("ofppt");
-
+	ScavTrap leet("1337");
+	ScavTrap ofppt("ofppt");
+	ScavTrap ot("ot");
+	std::cout<<ofppt.getAttackDamage()<<std::endl;
     leet.setAttackDamage(1);
 	ofppt.setAttackDamage(1);
 	leet.attack(ofppt.getName());
