@@ -1,9 +1,9 @@
 NAME = Fragtrap
-HEADER = ClapTrap.hpp FragTrap.hpp
+HEADER = ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 C = c++
 
-SRC = main.cpp ClapTrap.cpp FragTrap.cpp
+SRC = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
