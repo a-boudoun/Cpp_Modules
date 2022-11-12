@@ -38,5 +38,15 @@ for (int i = 0; i < 6; i++){
 	delete animals[i];
 }
 
+std::cout<<"-----------deep copy------------"<<std::endl;
+Dog *dog = new Dog();
+Dog *copydog = new Dog(*dog);
+Cat *cat = new Cat();
+Cat *copycat = new Cat(*cat);
+
+delete dog;
+delete copydog;
+delete cat;
+delete copycat;
 return 0;
 }

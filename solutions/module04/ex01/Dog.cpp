@@ -8,11 +8,13 @@ Dog::Dog(){
 
 Dog::Dog(std::string str){
 	this->type = str;
+	this->brain = new Brain();
 	std::cout<<"Dog constructor called"<<std::endl;
 }
 
 Dog::Dog(const Dog &src){
 	std::cout<<"Dog Copy constructor called"<<std::endl;
+	this->brain = NULL;
 	*this = src;
 }
 

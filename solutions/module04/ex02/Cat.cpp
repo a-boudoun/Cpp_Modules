@@ -3,18 +3,21 @@
 Cat::Cat()
 {
 	std::cout<<"Cat constructor called"<<std::endl;
+	this->brain = new Brain();
 	this->type = "Cat";
 }
 
 Cat::Cat(std::string str)
 {
 	std::cout<<"Cat constructor called"<<std::endl;
+	this->brain = new Brain();
 	this->type = str;
 }
 
 Cat::Cat(const Cat &src)
 {
 	std::cout<<"Cat Copy constructor called"<<std::endl;
+	this->brain = NULL;
 	*this = src;
 }
 
