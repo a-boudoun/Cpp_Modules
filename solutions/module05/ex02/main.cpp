@@ -4,7 +4,7 @@ int main()
 {
 	try{
 		Bureaucrat n("Bob", 1);
-		Form f("Form1", 5, 1);
+		Form f("Form1", 1, 1);
 		n.signForm(f);
 		std::cout << f << std::endl;
 		Bureaucrat b("Bob", 10);
