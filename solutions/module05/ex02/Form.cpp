@@ -40,7 +40,7 @@ std::ostream &operator<<(std::ostream &out, Form const &rhs){
 }
 
 void Form::beSigned(Bureaucrat const &b){
-	if (b.getGrade() > _gradeToSign)
+	if (b.getGrade() >= _gradeToSign)
 		throw Form::GradeTooLowException();
 	else
 		_signed = true;

@@ -33,5 +33,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
 	ofs<<"   _- -   | | _- _     "<<std::endl;
 	ofs<<"     _ -  | |   -_     "<<std::endl;
 	ofs<<"         // \\ 	     "<<std::endl;
-
+	ofs.close();
 }

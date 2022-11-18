@@ -3,14 +3,14 @@
 int main()
 {
 	try{
-		Bureaucrat n("Bob", 1);
+		Bureaucrat n("Noh", 1);
 		Form f("Form1", 5, 1);
 		n.signForm(f);
 		std::cout << f << std::endl;
 		Bureaucrat b("Bob", 10);
     	std::cout << "======== b ========" << std::endl;
     	std::cout << b<<std::endl;
-    	Form canSign("canSign", 10, 10);
+    	Form canSign("canSign", 12, 12);
     	std::cout << "======== canSign ========" << std::endl;
     	std::cout << canSign<<std::endl;
     	Form cannotSign("cannotSign", 5, 7);

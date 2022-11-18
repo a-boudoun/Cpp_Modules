@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+
 /*                   Constructors                               */
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade) {
 	std::cout << "Bureaucrat constructor called" << std::endl;

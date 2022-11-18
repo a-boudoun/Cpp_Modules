@@ -1,26 +1,40 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+
 
 int main()
 {
-	try{
-		Bureaucrat n("Bob", 1);
-		Form f("Form1", 1, 1);
-		n.signForm(f);
-		std::cout << f << std::endl;
-		Bureaucrat b("Bob", 10);
-    	std::cout << "======== b ========" << std::endl;
-    	std::cout << b<<std::endl;
-    	Form canSign("canSign", 10, 10);
-    	std::cout << "======== canSign ========" << std::endl;
-    	std::cout << canSign<<std::endl;
-    	Form cannotSign("cannotSign", 5, 7);
-    	std::cout << "======== cannotSign ========" << std::endl;
-    	std::cout << cannotSign<<std::endl;
-    	b.signForm(canSign);
-    	b.signForm(cannotSign);
-		}
-		catch (std::exception &e){
-		std::cout << e.what() << std::endl;
+	try
+	{
+		Bureaucrat b1("b1", 1);
+		Bureaucrat b2("b2", 2);
+		PresidentialPardonForm f1("f1");
+		RobotomyRequestForm f2("f2");
+		ShrubberyCreationForm f3("f3");
+		ShrubberyCreationForm f4("f4");
+		std::cout << "-------------Signing----------" << std::endl;
+		f1.beSigned(b1);
+		f2.beSigned(b1);
+		f3.beSigned(b1);
+		f4.beSigned(b1);
+		std::cout << "------------b1-------------" << std::endl;
+		std::cout << b1 << std::endl;
+		f1.execute(b1);
+		f2.execute(b1);
+		f3.execute(b1);
+		std::cout << "------------b2-------------" << std::endl;
+		std::cout << b2 << std::endl;
+		f1.execute(b2);
+		f2.execute(b2);
+		f4.execute(b2);
 	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
 	return 0;
 }

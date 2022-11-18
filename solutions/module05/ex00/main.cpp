@@ -3,7 +3,7 @@
 int main()
 {
 	try{
-	Bureaucrat b("Bob", 142);
+	Bureaucrat b("Bob", 150);
 	std::cout << b.getName() << " " << b.getGrade() << std::endl;
 	b.incrementGrade();
 	std::cout << b << std::endl;
