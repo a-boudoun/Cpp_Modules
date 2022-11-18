@@ -1,9 +1,7 @@
 #include "Intern.hpp"
 
 Intern::Intern(){
-	this -> _form[0] = NULL;
-	this -> _form[1] = NULL;
-	this -> _form[2] = NULL;
+	std::cout<<"Intern created"<<std::endl;
 }
 
 Intern::Intern(Intern const &src){
@@ -15,17 +13,24 @@ Intern &Intern::operator=(Intern const &rhs){
 	return *this;
 }
 
+Form* Intern::makeRobotomyRequestForm(std::string target){
+	return new RobotomyRequestForm(target);
+}
+
+Form* Intern::makePresidentialPardonForm(std::string target){
+	return new PresidentialPardonForm(target);
+}
+
+Form* Intern::makeShrubberyCreationForm(std::string target){
+	return new ShrubberyCreationForm(target);
+}
+
 Intern::~Intern(){
 	std::cout<<"Intern destroyed"<<std::endl;
-	delete this -> _form[0];
-	delete this -> _form[1];
-	delete this -> _form[2];
 }
 
 Form *Intern::makeForm(std::string formName, std::string target){
-	this -> _form[0] = new PresidentialPardonForm(target);
-	this -> _form[1] = new RobotomyRequestForm(target);
-	this -> _form[2] = new ShrubberyCreationForm(target);
+	Form* (Intern::*fptr[3])(std::string) = {&Intern::makePresidentialPardonForm, &Intern::makeRobotomyRequestForm, &Intern::makeShrubberyCreationForm};
 	std::string formNames[3] = {
 		"presidential pardon",
 		"robotomy request",
@@ -34,7 +39,7 @@ Form *Intern::makeForm(std::string formName, std::string target){
 	for (int i = 0; i < 3; i++){
 		if (formName == formNames[i]){
 			std::cout << "Intern creates " << formName << std::endl;
-			return this -> _form[i];
+			return (this->*fptr[i])(target);
 		}
 	}
 	std::cout << "Intern can't create " << formName << std::endl;

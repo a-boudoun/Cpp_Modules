@@ -10,11 +10,12 @@ int main()
 {
 	try
 	{
-		{
 		Intern someRandomIntern;
-		Form* rrf;
+		Form *rrf, *ppf, *scf, *walo;
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		}
+		ppf = someRandomIntern.makeForm("presidential pardon", "Bender");
+		scf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+		walo = someRandomIntern.makeForm("walo", "Bender");
 	}
 	catch(const std::exception& e)
 	{
