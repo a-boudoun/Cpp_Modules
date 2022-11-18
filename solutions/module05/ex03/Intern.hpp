@@ -10,9 +10,9 @@ class Intern{
 		Intern(Intern const &src);
 		Intern &operator=(Intern const &rhs);
 		~Intern();
-		Form *makeForm(std::string formName, std::string formTarget);
-		Form *makePresidentialPardonForm(std::string formTarget);
-		Form *makeRobotomyRequestForm(std::string formTarget);
-		Form *makeShrubberyCreationForm(std::string formTarget);
+		AForm *makeForm(std::string formName, std::string formTarget);
+		AForm *makePresidentialPardonForm(std::string formTarget);
+		AForm *makeRobotomyRequestForm(std::string formTarget);
+		AForm *makeShrubberyCreationForm(std::string formTarget);
 
 };

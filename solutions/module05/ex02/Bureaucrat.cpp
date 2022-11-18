@@ -1,5 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/18 17:57:06 by aboudoun          #+#    #+#             */
+/*   Updated: 2022/11/18 18:15:07 by aboudoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 /*                   Constructors                               */
+
+Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
+{}
+
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade) {
 	std::cout << "Bureaucrat constructor called" << std::endl;
 	if (grade < 1)
@@ -65,7 +81,7 @@ void Bureaucrat::setGrade(int grade) {
 	_grade = grade;
 }
 
-void Bureaucrat::signForm(Form &form){
+void Bureaucrat::signForm(AForm &form){
 	try{
 		form.beSigned(*this);
 	}catch(std::exception &e){
@@ -77,7 +93,7 @@ void Bureaucrat::signForm(Form &form){
 
 /* .....................executeForm.............................. */
 
-void Bureaucrat::executeForm(Form const & form){
+void Bureaucrat::executeForm(AForm const & form){
 	try{
 		form.execute(*this);
 	}catch(std::exception &e){

@@ -13,15 +13,15 @@ Intern &Intern::operator=(Intern const &rhs){
 	return *this;
 }
 
-Form* Intern::makeRobotomyRequestForm(std::string target){
+AForm* Intern::makeRobotomyRequestForm(std::string target){
 	return new RobotomyRequestForm(target);
 }
 
-Form* Intern::makePresidentialPardonForm(std::string target){
+AForm* Intern::makePresidentialPardonForm(std::string target){
 	return new PresidentialPardonForm(target);
 }
 
-Form* Intern::makeShrubberyCreationForm(std::string target){
+AForm* Intern::makeShrubberyCreationForm(std::string target){
 	return new ShrubberyCreationForm(target);
 }
 
@@ -29,8 +29,8 @@ Intern::~Intern(){
 	std::cout<<"Intern destroyed"<<std::endl;
 }
 
-Form *Intern::makeForm(std::string formName, std::string target){
-	Form* (Intern::*fptr[3])(std::string) = {&Intern::makePresidentialPardonForm, &Intern::makeRobotomyRequestForm, &Intern::makeShrubberyCreationForm};
+AForm *Intern::makeForm(std::string formName, std::string target){
+	AForm* (Intern::*fptr[3])(std::string) = {&Intern::makePresidentialPardonForm, &Intern::makeRobotomyRequestForm, &Intern::makeShrubberyCreationForm};
 	std::string formNames[3] = {
 		"presidential pardon",
 		"robotomy request",

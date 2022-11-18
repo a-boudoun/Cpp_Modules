@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/18 18:07:29 by aboudoun          #+#    #+#             */
+/*   Updated: 2022/11/18 18:07:30 by aboudoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
 #include<iostream>
@@ -9,6 +21,7 @@ class Bureaucrat{
 		std::string const _name;
 		int _grade;
 	public:
+		Bureaucrat();
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(Bureaucrat const &src);
 		Bureaucrat &operator=(Bureaucrat const &other);

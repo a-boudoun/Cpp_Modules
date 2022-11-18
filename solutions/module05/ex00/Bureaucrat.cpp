@@ -1,5 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/18 18:04:04 by aboudoun          #+#    #+#             */
+/*   Updated: 2022/11/18 18:14:30 by aboudoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
+
 /*                   Constructors                               */
+Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
+{}
+
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade) {
 	std::cout << "Bureaucrat constructor called" << std::endl;
 	if (grade < 1)
@@ -60,9 +76,5 @@ int Bureaucrat::getGrade() const {
 	return _grade;
 }
 
-/*                   Setters                                   */
-void Bureaucrat::setGrade(int grade) {
-	_grade = grade;
-}
 
 
