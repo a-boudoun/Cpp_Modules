@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:33:35 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/20 18:57:42 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/20 19:09:57 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,22 @@ bool Convert::isDouble()
 	return (false);
 }
 
+bool Convert::isNanInf()
+{
+	if (_input == "-inf" || _input == "+inf" || _input == "nan" || _input == "-inff" || _input == "+inff" || _input == "nanf")
+	{
+		_d = std::stod(_input);
+		_f = std::stof(_input);
+
+		std::cout<<"char: impossible"<<std::endl;
+		std::cout<<"int: impossible"<<std::endl;
+		std::cout<<"float: "<<_f<<"f"<<std::endl;
+		std::cout<<"double: "<<_d<<std::endl;
+		return(true);
+	}
+	return false;
+}
+
 bool Convert::isFloat()
 {
 	bool f = false;
@@ -157,12 +173,6 @@ bool Convert::isFloat()
 	return (false);
 }
 
-bool Convert::isNanInf()
-{
-
-		return true;
-	return false;
-}
 
 bool Convert::validInput()
 {
@@ -173,34 +183,10 @@ bool Convert::validInput()
 
 /*********************** Convert types *********************************/
 
-void	Convert::toChar() const
+void display(){
+	
+}
+void	Convert::toChar()
 {
-	if (isNanInf())
-	{
-		std::cout << "char: impossible" << std::endl;
-		return;
-	}
-	if (isChar())
-		std::cout << "char: '" << _c << "'" << std::endl;
-	else if (isInt())
-	{
-		if (_i >= 0 && _i <= 127)
-			std::cout << "char: '" << static_cast<char>(_i) << "'" << std::endl;
-		else
-			std::cout << "char: impossible" << std::endl;
-	}
-	else if (isFloat())
-	{
-		if (_f >= 0 && _f <= 127)
-			std::cout << "char: '" << static_cast<char>(_f) << "'" << std::endl;
-		else
-			std::cout << "char: impossible" << std::endl;
-	}
-	else if (isDouble())
-	{
-		if (_d >= 0 && _d <= 127)
-			std::cout << "char: '" << static_cast<char>(_d) << "'" << std::endl;
-		else
-			std::cout << "char: impossible" << std::endl;
-	}
+
 }
