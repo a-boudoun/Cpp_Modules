@@ -6,13 +6,13 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:33:41 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/20 19:09:31 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/20 22:53:00 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 
-int main(char **av, int ac)
+int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
@@ -28,10 +28,7 @@ int main(char **av, int ac)
 		std::cout << "Invalid input" << std::endl;
 		return (1);
 	}
-	convert.toChar();
-	convert.toInt();
-	convert.toFloat();
-	convert.toDouble();
+	convert.cast();
 	convert.display();
 
 	return (0);

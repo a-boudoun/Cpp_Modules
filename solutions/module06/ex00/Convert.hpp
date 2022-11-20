@@ -6,13 +6,21 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:33:38 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/20 19:11:00 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/20 22:51:43 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+
+enum eType
+{
+	CHAR,
+	INT,
+	FLOAT,
+	DOUBLE,
+};
 
 class Convert{
 	private:
@@ -21,6 +29,7 @@ class Convert{
 		float _f;
 		double _d;
 		char _c;
+		eType _type;
 
 	public:
 		Convert();
@@ -36,11 +45,6 @@ class Convert{
 		bool isNanInf();
 
 		bool validInput();
-
-		void toChar();
-		void toInt();
-		void toFloat();
-		void toDouble();
-
+		void cast();
 		void display();
 };

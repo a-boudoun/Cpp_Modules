@@ -1,9 +1,9 @@
 NAME = covert
-HEADER = Bureaucrat.hpp Convert.hpp Convert.cpp
+HEADER = Convert.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 C = c++
 
-SRC = main.cpp Bureaucrat.cpp Convert.cpp
+SRC = main.cpp Convert.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
