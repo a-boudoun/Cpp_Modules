@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Convert.hpp                                        :+:      :+:    :+:   */
+/*   serialization.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 15:33:38 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/21 10:07:14 by aboudoun         ###   ########.fr       */
+/*   Created: 2022/11/21 13:58:33 by aboudoun          #+#    #+#             */
+/*   Updated: 2022/11/21 13:58:34 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,10 @@
 #include <iostream>
 #include <iomanip>
 
-enum eType
+struct Data
 {
-	CHAR,
-	INT,
-	FLOAT,
-	DOUBLE,
+	int n;
 };
 
-class Convert{
-	private:
-		std::string _input;
-		int _i;
-		float _f;
-		double _d;
-		char _c;
-		eType _type;
-
-	public:
-		Convert();
-		Convert(std::string input);
-		Convert(Convert const & src);
-		~Convert();
-		Convert & operator=(Convert const & rhs);
-
-		bool isChar();
-		bool isInt();
-		bool isFloat();
-		bool isDouble();
-		bool isNanInf();
-
-		bool validInput();
-		void cast();
-		void display();
-};
+Data* deserialize(uintptr_t raw);
+uintptr_t serialize(Data* ptr);

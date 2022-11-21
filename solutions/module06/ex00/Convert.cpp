@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:33:35 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/21 10:00:33 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:46:31 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ bool Convert::isInt()
 	if (_input.length() == 1 && isdigit(_input[0]))
 	{
 		this->_i = std::stoi(_input);
+		_type = INT;
 		return (true);
 	}
 
@@ -146,7 +147,7 @@ bool Convert::isFloat()
 		if (!isdigit(_input[i]) && _input[i] != 'f')
 			return (false);
 	}
-	for (size_t i = 0; i < _input.length(); i++)
+	for (size_t i = _input.length() - 1; i > 0; i--)
 	{
 		if (_input[i] == 'f')
 		{
@@ -205,7 +206,7 @@ void Convert::cast()
 
 void Convert::display()
 {
-	std::cout.precision(1);
+	std::cout << std::fixed << std::setprecision(1);
 
 	std::cout << "char: ";
 	if ( std::isprint( _c ) )
