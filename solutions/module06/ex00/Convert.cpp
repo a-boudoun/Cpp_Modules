@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:33:35 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/20 22:51:56 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/21 10:00:33 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,29 @@
 Convert::Convert()
 	:_input(""), _i(0), _f(0.0f), _d(0.0), _c('\0')
 {
-	std::cout<<"Default constructor called"<<std::endl;
+	// std::cout<<"Default constructor called"<<std::endl;
 }
 
 Convert::Convert(std::string input)
 	:_input(input), _i(0), _f(0.0f), _d(0.0), _c('\0')
 {
-	std::cout<<"Constructor called"<<std::endl;
+	// std::cout<<"Constructor called"<<std::endl;
 }
 
 Convert::Convert(Convert const & src)
 {
 	*this = src;
-	std::cout<<"Copy constructor called"<<std::endl;
+	// std::cout<<"Copy constructor called"<<std::endl;
 }
 
 Convert::~Convert()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 Convert & Convert::operator=(Convert const & rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	// std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)
 	{
 		_input = rhs._input;
@@ -88,11 +88,6 @@ bool Convert::isDouble()
 {
 	bool dot = false;
 
-	if (_input == "-inf" || _input == "+inf" || _input == "nan")
-	{
-		this->_d = std::stod(_input);
-		return (true);
-	}
 	for (size_t i = 0; i < _input.length(); i++)
 	{
 		if (i == 0 && (_input[i] == '-' || _input[i] == '+'))
@@ -135,11 +130,22 @@ bool Convert::isNanInf()
 bool Convert::isFloat()
 {
 	bool f = false;
+	bool dot = false;
 
-	if (_input == "-inff" || _input == "+inff" || _input == "nanf")
-		return true;
-	if (!isDouble())
-		return (false);
+	for (size_t i = 0; i < _input.length(); i++)
+	{
+		if (i == 0 && (_input[i] == '-' || _input[i] == '+'))
+			continue;
+		if (_input[i] == '.')
+		{
+			if (dot)
+				return (false);
+			dot = true;
+			continue;
+		}
+		if (!isdigit(_input[i]) && _input[i] != 'f')
+			return (false);
+	}
 	for (size_t i = 0; i < _input.length(); i++)
 	{
 		if (_input[i] == 'f')
@@ -199,6 +205,8 @@ void Convert::cast()
 
 void Convert::display()
 {
+	std::cout.precision(1);
+
 	std::cout << "char: ";
 	if ( std::isprint( _c ) )
 		std::cout << "'" << _c << "'" << std::endl;
