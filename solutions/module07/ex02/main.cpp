@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:57:07 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/22 12:09:17 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/22 13:51:16 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+    // const Array<int> numbers4(5);
+    // for(unsigned int i = 0; i < numbers4.size(); i++) {
+    //     std::cout << numbers4[i] << std::endl;
+    // }
 
+    system ("leaks array");
     return 0;
 }

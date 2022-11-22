@@ -6,13 +6,13 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 13:32:47 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/22 13:32:48 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/22 13:44:48 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"iter.hpp"
 
-void printInt(int &i)
+void printInt(int const &i)
 {
 	std::cout<< i <<std::endl;
 }

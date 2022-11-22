@@ -6,12 +6,11 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 19:44:08 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/22 13:32:41 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:37:57 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Whatever.hpp"
-
+#include "Whatever.hpp"
 int main( void ) {
 int a = 2;
 int b = 3;

@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 19:50:49 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/22 12:07:35 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/22 13:47:00 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ template <typename T> class Array{
 		}
 
 		T& operator[](int i)
+		{
+			if (i >= (int)_size || i < 0)
+				throw OutOfBounds();
+			return (_array[i]);
+		}
+		const T& operator[](int i) const
 		{
 			if (i >= (int)_size || i < 0)
 				throw OutOfBounds();
