@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/19 18:01:53 by aboudoun          #+#    #+#             */
+/*   Updated: 2022/11/19 18:03:39 by aboudoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 
 Intern::Intern(){
@@ -5,10 +17,12 @@ Intern::Intern(){
 }
 
 Intern::Intern(Intern const &src){
+	std::cout<<"Intern copy constructor called"<<std::endl;
 	*this = src;
 }
 
 Intern &Intern::operator=(Intern const &rhs){
+	std::cout<<"Intern assignation operator called"<<std::endl;
 	(void)rhs;
 	return *this;
 }

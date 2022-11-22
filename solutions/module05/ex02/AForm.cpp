@@ -6,16 +6,19 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:41:42 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/18 18:13:42 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/19 17:51:46 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
 AForm::AForm() : _name("default"), _signed(false), _gradeToSign(150), _gradeToExecute(150)
-{}
+{
+	std::cout<<"Default constructor called"<<std::endl;
+}
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute){
+	std::cout<<"AForm constructor called"<<std::endl;
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw AForm::GradeTooHighException();
 	else if (gradeToSign > 150 || gradeToExecute > 150)
@@ -23,12 +26,15 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name
 }
 
 AForm::AForm(AForm const &src) : _name(src._name), _signed(src._signed), _gradeToSign(src._gradeToSign), _gradeToExecute(src._gradeToExecute){
+	std::cout<<"AForm copy constructor called"<<std::endl;
 }
 
 AForm::~AForm(){
+	std::cout<<"AForm destructor called"<<std::endl;
 }
 
 AForm &AForm::operator=(AForm const &rhs){
+	std::cout<<"AForm assignation operator called"<<std::endl;
 	_signed = rhs._signed;
 	return *this;
 }

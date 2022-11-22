@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:04:04 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/18 18:14:30 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:20:21 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 /*                   Constructors                               */
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
-{}
+{
+	std::cout<<"Bereaucrat default constructor called"<<std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade) {
 	std::cout << "Bureaucrat constructor called" << std::endl;
