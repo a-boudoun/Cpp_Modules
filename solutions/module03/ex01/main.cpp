@@ -4,7 +4,7 @@ int main()
 {
 	ScavTrap leet("1337");
 	ScavTrap ofppt("ofppt");
-	ScavTrap ot("ot");
+	ScavTrap ot(ofppt);
 	std::cout<<ofppt.getAttackDamage()<<std::endl;
     leet.setAttackDamage(1);
 	ofppt.setAttackDamage(1);
