@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:17:26 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/05 18:33:33 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/05 22:05:26 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,43 @@ const int Fixed::fraction_bits = 8;
 
 Fixed::Fixed()
 	: fixed_value(0) {
-		std::cout << "Default constructor called" << std::endl;
+		// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &obj)
     : fixed_value(obj.fixed_value) {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::~Fixed() {
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return (this -> fixed_value);
 }
 
 void Fixed::setRawBits(int const raw) {
-    std::cout << "setRawBits member function called" << std::endl;
+    // std::cout << "setRawBits member function called" << std::endl;
     this -> fixed_value = raw;
 }
 
 Fixed &Fixed::operator = (const Fixed &rhs){
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	this->fixed_value = rhs.fixed_value;
 	return *this;
 }
+
 /*--------------------------------EX01--------------------------------------*/
 
 Fixed::Fixed(const int n) {
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
     this -> fixed_value = n << fraction_bits;
 }
 
 Fixed::Fixed(const float f) {
-    std::cout << "Float constructor called" << std::endl;
+    // std::cout << "Float constructor called" << std::endl;
     this -> fixed_value = roundf(f * (1 << fraction_bits));
 }
 
@@ -107,11 +108,6 @@ Fixed Fixed::operator*(const Fixed& obj) const{
 }
 
 Fixed Fixed::operator/(const Fixed& obj) const{
-    if (!obj.fixed_value)
-    {
-        std::cout << "Division by zero" << std::endl;
-        std::exit(1);
-    }
     return Fixed(this->toFloat() / obj.toFloat());
 }
 
