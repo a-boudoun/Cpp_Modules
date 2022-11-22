@@ -48,5 +48,6 @@ delete dog;
 delete copydog;
 delete cat;
 delete copycat;
+system("leaks animal");
 return 0;
 }

@@ -31,6 +31,7 @@ delete meta2;
 std::cout<<"------------------EX01------------------"<<std::endl;
 const Animal *animals[6] = {new Dog(), new Cat(), new Dog(), new Cat(), new Dog(), new Cat()};
 
+
 for (int i = 0; i < 6; i++){
 	animals[i]->makeSound();
 }

@@ -1,4 +1,4 @@
-NAME = Animal
+NAME = animal
 HEADER = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 C = c++
