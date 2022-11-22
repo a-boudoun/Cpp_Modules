@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:21:36 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/10/18 17:35:47 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/10/22 15:26:05 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ str	PhoneBook::requestInfo(str info)
 		std::cout<<"Invalid input"<<std::endl;
 		std::exit(0);
 	}
+	std::cin.ignore(1000, '\n');
 	if (input.empty())
 		requestInfo(info);
 	return (input);
@@ -102,7 +103,7 @@ void	PhoneBook::search()
 		std::cout<<"invalid input"<<std::endl;
 		std::exit(0);
 	}
-
+	std::cin.ignore(1000, '\n');
 	if (index <= count - 1 && index >= 0)
 	{
 		std::cout<<"First Name: "<<this->contact[index].GetFirstName()<<std::endl;
