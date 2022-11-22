@@ -6,9 +6,20 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:33:41 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/21 11:15:52 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:57:18 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+class B;
+class D : public B;
+B* pb; => what (D*)pb?
+
+with static_cast:
+Assume that the B* points to a B that is part of a D object; don't bother
+performing a check. Adjust the address of the pointer if necessary so that
+it will point to the D object.
+*/
 
 #include "Convert.hpp"
 

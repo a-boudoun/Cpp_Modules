@@ -6,14 +6,13 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:58:25 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/21 13:58:26 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:45:09 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <cstdlib>
 
 class Identify{
 	public:
