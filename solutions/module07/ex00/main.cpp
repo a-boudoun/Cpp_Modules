@@ -6,31 +6,11 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 19:44:08 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/21 20:12:14 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/22 13:32:41 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Whatever.hpp"
-
-// void swap(int a, int b){
-// 	(void)	a;
-// 	(void)	b;
-// 	std::cout<<"adfjioadjsf"<<std::endl;
-// }
-
-// int min(int a, int b){
-// 	(void)	a;
-// 	(void)	b;
-// 	std::cout<<"minminmimin"<<std::endl;
-// 	return (0);
-// }
-
-// int max(int a, int b){
-// 	(void)	a;
-// 	(void)	b;
-// 	std::cout<<"maxmaxmaxmax"<<std::endl;
-// 	return(0);
-// }
 
 int main( void ) {
 int a = 2;
