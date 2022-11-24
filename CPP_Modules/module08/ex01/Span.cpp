@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:57:53 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/11/24 15:30:11 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:00:37 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ void Span::addNumber(int n)
 {
 	if (this->_numbers.size() < this->_n)
 		this->_numbers.push_back(n);
+	else
+		throw Span::FullSpan();
+}
+
+void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	if (this->_numbers.size() + std::distance(begin, end) <= this->_n)
+		this->_numbers.insert(this->_numbers.end(), begin, end);
 	else
 		throw Span::FullSpan();
 }
