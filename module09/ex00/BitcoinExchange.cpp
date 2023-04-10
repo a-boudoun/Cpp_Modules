@@ -6,18 +6,20 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:33:50 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/09 02:16:46 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/04/10 02:28:00 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange()
+BitcoinExchange::BitcoinExchange() : _file(""), _price()
 {
+	// std::cout << "BitcoinExchange created" << std::endl;
 }
 
-BitcoinExchange::~BitcoinExchange()
+BitcoinExchange::BitcoinExchange(std::string file) : _file(file), _price()
 {
+	// std::cout << "BitcoinExchange created" << std::endl;
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
@@ -28,18 +30,57 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &rhs)
 {
 	if (this != &rhs)
+	{
+		_file = rhs._file;
 		_price = rhs._price;
+	}
 	return (*this);
+}
+
+BitcoinExchange::~BitcoinExchange()
+{
+	// std::cout << "BitcoinExchange destroyed" << std::endl;
 }
 
 void	BitcoinExchange::setDatabse()
 {
-	std::ifstream file("database.txt");
-	std::string line;
-	if(file.is_open())
+	std::string		line;
+	std::string 	date;
+	std::string 	price;
+	std::ifstream	file("data.csv");
+
+	if (file.is_open())
 	{
-		
+		getline(file, line);
+		while(getline(file, line))
+		{
+			date = line.substr(0, line.find(","));
+			price = line.substr(line.find(",") + 1, line.length());
+			_price[date] = toDouble(price);
+		}
 	}
 	else
-		std::cerr << "Error: File not found" << std::endl;
+	{
+		std::cout << "Unable to open the database" << std::endl;
+		std::exit(1);
+	}
+}
+
+void	BitcoinExchange::getResult()
+{
+	std::string		line;
+	
+	std::ifstream	input(this->_file);
+	if (input.is_open())
+	{
+		while(getline(input, line))
+		{
+			if (line.empty())
+				continue;
+			else
+				checkData(line);
+		}
+	}
+	else
+		std::cout << "Unable to open the file" << std::endl;
 }
