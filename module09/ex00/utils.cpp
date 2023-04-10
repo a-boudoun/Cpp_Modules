@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:20:30 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/10 03:15:31 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/04/10 20:09:34 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,25 @@ double	toDouble(std::string str)
 
 bool	checkDigit(const std::string&	str)
 {
-	for (size_t i = 0; i < str.length(); i++)
+	size_t front = 0;
+	size_t back = str.length() - 1;
+	bool dot = false;
+	
+	while(str[front] && str[front] == ' ')
+		front++;
+	while (str[back] && str[back] == ' ')
+		back--;
+	if (str[front] == '-' || str[front] == '+')
+		front++;
+	for (size_t i = front; i < back; i++)
 	{
-		if (!std::isdigit(str[i]) && str[i] != '.' && str[i] != ' ')
+		if (str[i] == '.')
+		{
+			if (dot == true)
+				return (false);
+			dot = true;
+		}
+		else if (!std::isdigit(str[i]))
 			return (false);
 	}
 	return (true);
@@ -36,18 +52,18 @@ bool	checkValue(const std::string& value)
 
 	if (!checkDigit(value))
 	{
-		std::cout << "Error: bad value format => " << value << std::endl;
+		std::cout << "Error: bad input -> " << value << std::endl;
 		return (false);
 	}
 	v = toDouble(value);
 	if (v < 0)
 	{
-		std::cout << "Error not a positive number => " << value << std::endl;
+		std::cout << "Error not a positive number" << std::endl;
 		return (false);
 	}
 	if (v > 1000)
 	{
-		std::cout << "Error: too large number => " << value << std::endl;
+		std::cout << "Error: too large number -> " << value << std::endl;
 		return (false);
 	}
 	return (true);
@@ -57,12 +73,12 @@ bool	checkLeap(size_t year, size_t month, size_t day)
 {
 	if (year % 4 == 0 && day >29)
 	{
-		std::cout << "Error: bad date format => " << year << "-" << month << "-" << day << std::endl;
+		std::cout << "Error: bad input -> " << year << "-" << month << "-" << day << std::endl;
 		return (false);
 	}
 	else if (day > 28)
 	{	
-		std::cout << "Error: bad date format => " << year << "-" << month << "-" << day << std::endl;
+		std::cout << "Error: bad input -> " << year << "-" << month << "-" << day << std::endl;
 		return (false);
 	}
 	return (true);
@@ -81,11 +97,11 @@ bool	checkDate(const std::string& date)
 	year = toDouble(y);
 	month = toDouble(m);
 	day = toDouble(d);
-
-	if (checkDigit(y) == false || checkDigit(m) == false || checkDigit(d) == false || 
+	
+	if (checkDigit(y) == false || checkDigit(m) == false || checkDigit(d) == false ||
 		strptime(date.c_str(), "%Y-%m-%d", &struc) == NULL)
 	{
-		std::cout << "Error: bad date format => " << date << std::endl;
+		std::cout << "Error: bad input => " << date << std::endl;
 		return (false);
 	}
 	if (month == 2)
@@ -110,29 +126,23 @@ void	BitcoinExchange::checkData(const std::string& line)
 		value = line.substr(pos + 1, line.length());
 		if (checkDate(date) && checkValue(value))
 		{
-			it = this->_price.lower_bound(date);
-			if (it == this->_price.end())
+			if (this->_price.find(date) != this->_price.end())
+				it = this->_price.find(date);
+			else if(this->_price.lower_bound(date) != this->_price.end())
 			{
-				result = this->_price.rbegin()->second * toDouble(value);
-				std::cout
-				<< date
-				<< " => "
-				<< value
-				<< " = "
-				<< result
-				<< std::endl;
+				it = this->_price.lower_bound(date);
+				it --;
 			}
 			else
-			{
-				result = it->second * toDouble(value);
-				std::cout
-				<< date
-				<< " => "
-				<< value
-				<< " = "
-				<< result
-				<< std::endl;
-			}
+				it = this->_price.rbegin().base();
+			result = it->second * toDouble(value);
+			std::cout
+			<< date
+			<< " => "
+			<< value
+			<< " = "
+			<< result
+			<< std::endl;
 		}
 	}
 }
