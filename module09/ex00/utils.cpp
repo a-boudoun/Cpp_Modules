@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:20:30 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/10 20:09:34 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/04/10 21:22:41 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,15 +126,14 @@ void	BitcoinExchange::checkData(const std::string& line)
 		value = line.substr(pos + 1, line.length());
 		if (checkDate(date) && checkValue(value))
 		{
-			if (this->_price.find(date) != this->_price.end())
-				it = this->_price.find(date);
-			else if(this->_price.lower_bound(date) != this->_price.end())
+			it = this->_price.upper_bound(date);
+			if (it == this->_price.begin())
 			{
-				it = this->_price.lower_bound(date);
-				it --;
+				std::cout << "Error: no bitcoin yet" << std::endl;
+				return ;
 			}
 			else
-				it = this->_price.rbegin().base();
+				it--; 
 			result = it->second * toDouble(value);
 			std::cout
 			<< date

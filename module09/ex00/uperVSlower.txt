@@ -1,0 +1,13 @@
+ upper_bound member function of the std::map container in C++ that allows
+  you to find the iterator pointing to the first element in the
+   map that is greater than a given key.
+
+ lower_bound is a member function of std::map that allows you to 
+ find the iterator pointing to the first element in the map that 
+ is not less than a given key, using a binary search algorithm 
+
+
+ In other words, lower_bound returns the position of the element 
+ that is equal to or greater than the given key, whereas upper_bound 
+ returns the position of the element that is strictly greater than the 
+ given key.

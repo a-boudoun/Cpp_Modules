@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:33:50 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/10 02:28:00 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/04/10 21:05:34 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	BitcoinExchange::getResult()
 	{
 		while(getline(input, line))
 		{
-			if (line.empty())
+			if (line.empty() || line == "date | value")
 				continue;
 			else
 				checkData(line);
