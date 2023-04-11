@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:20:30 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/10 21:22:41 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/04/10 21:25:34 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ void	BitcoinExchange::checkData(const std::string& line)
 				return ;
 			}
 			else
-				it--; 
+				it--;
 			result = it->second * toDouble(value);
 			std::cout
 			<< date
