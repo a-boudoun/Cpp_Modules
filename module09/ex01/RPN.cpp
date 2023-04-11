@@ -6,13 +6,13 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 23:34:17 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/11 21:33:16 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:47:18 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-RPN::RPN() : _stack(), _str(), _result(0), _first(0), _second(0)
+RPN::RPN() : _stack(), _str(), _oper(), _first(0), _second(0), _result(0)
 {}
 
 RPN::RPN(RPN const &rhs) 
@@ -20,13 +20,20 @@ RPN::RPN(RPN const &rhs)
 	*this = rhs;
 }
 
-RPN::RPN(std::string const &str) : _stack(), _str(str), _result(0), _first(0), _second(0)
+RPN::RPN(std::string const &str) : _stack(), _str(str), _oper(), _first(0), _second(0), _result(0)
 {}
 
 RPN &RPN::operator=(RPN const &rhs)
 {
 	if (this != &rhs)
-		_stack = rhs._stack;
+	{
+		this -> _stack = rhs._stack;
+		this -> _str = rhs._str;
+		this -> _oper = rhs._oper;
+		this -> _first = rhs._first;
+		this -> _second = rhs._second;
+		this -> _result = rhs._result;
+	}
 	return (*this);
 }
 
