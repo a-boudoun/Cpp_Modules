@@ -6,28 +6,28 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 01:40:31 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/11 02:44:06 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/09/18 14:47:36 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe()
-{}
-
-PmergeMe::
-
-PmergeMe::PmergeMe(PmergeMe const &rhs)
+void parseArguments(char *av, std::vector<int> &_vec)
 {
-	*this = rhs;
+	std::stringstream ss(av);
+	int tmp;
+
+	while (!ss.eof()){
+		ss >> tmp;
+		if (ss.fail() || tmp < 0)
+			throw std::invalid_argument("Error: invalid argument");
+		_vec.push_back(tmp);
+	}
 }
 
-PmergeMe &PmergeMe::operator=(PmergeMe const &rhs)
+void sortUnorderedMap(std::vector<int> &_vec)
 {
-	if (this != &rhs)
-		;
-	return (*this);
+	std::cout << "sortUnorderedMap" << std::endl;
+	for (size_t i = 0; i < _vec.size(); i++)
+		std::cout << _vec[i] << std::endl;
 }
-
-PmergeMe::~PmergeMe()
-{}
