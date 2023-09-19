@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 01:40:31 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/09/19 15:46:35 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:49:30 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ static void	binarySearchInsertLis(int number, std::list<int>& _list)
 
 std::vector<int> sortVector(std::vector<int> &_input)
 {
-	//using Ford–Johnson algorithm
-
 	std::vector<int> _vec;
 	std::vector<int> _small;
 	std::vector<int> _big;
@@ -58,7 +56,6 @@ std::vector<int> sortVector(std::vector<int> &_input)
 	
 	for (size_t i = 0; i < _input.size(); i += 2)
 	{
-		//! first > second
 		if (_input[i] > _input[i + 1])
 		{
 			_small.push_back(_input[i + 1]);
