@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:20:30 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/10 21:25:34 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/09/19 17:04:11 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ bool	checkValue(const std::string& value)
 
 bool	checkLeap(size_t year, size_t month, size_t day)
 {
-	if (year % 4 == 0 && day >29)
+	if ((year % 4 == 0  || (year % 100 == 0 && year % 400 == 0)) && day > 29)
 	{
 		std::cout << "Error: bad input -> " << year << "-" << month << "-" << day << std::endl;
 		return (false);
