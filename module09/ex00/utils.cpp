@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:20:30 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/09/20 16:25:00 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/09/20 19:44:00 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ double	toDouble(std::string str)
 bool	checkDigit(const std::string&	str)
 {
 	size_t front = 0;
-	size_t back = str.length() - 1;
+	size_t back = str.size() - 1;
 	bool dot = false;
 	
 	while(str[front] && str[front] == ' ')
@@ -32,7 +32,7 @@ bool	checkDigit(const std::string&	str)
 		back--;
 	if (str[front] == '-' || str[front] == '+')
 		front++;
-	for (size_t i = front; i < back; i++)
+	for (size_t i = front; i <= back; i++)
 	{
 		if (str[i] == '.')
 		{
