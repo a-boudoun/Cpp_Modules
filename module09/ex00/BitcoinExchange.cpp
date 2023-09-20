@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:33:50 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/10 21:05:34 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/09/20 16:17:19 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 BitcoinExchange::BitcoinExchange() : _file(""), _price()
 {
-	// std::cout << "BitcoinExchange created" << std::endl;
 }
 
 BitcoinExchange::BitcoinExchange(std::string file) : _file(file), _price()
 {
-	// std::cout << "BitcoinExchange created" << std::endl;
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
@@ -39,7 +37,6 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &rhs)
 
 BitcoinExchange::~BitcoinExchange()
 {
-	// std::cout << "BitcoinExchange destroyed" << std::endl;
 }
 
 void	BitcoinExchange::setDatabse()

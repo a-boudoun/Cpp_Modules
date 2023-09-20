@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 23:34:17 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/11 21:47:18 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/09/20 19:08:25 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,9 @@ void	RPN::parsLine()
 {
 	std::stringstream	ss(this->_str);
 	std::string			tmp;
+
+	if (ss.str().size() < 2)
+		throw std::exception();
 	while (ss >> tmp)
 	{
 		if (tmp == "+" || tmp == "*" || tmp == "-" || tmp == "/")
@@ -81,7 +84,7 @@ void	RPN::parsLine()
 			this->_oper = tmp;
 			this->calculResult();
 		}
-		else if (tmp >= "0" && tmp <= "9")
+		else if (toInt(tmp) >= 0 && toInt(tmp) <= 9)
 			this->_stack.push(toInt(tmp));
 		else
 			throw std::exception();
