@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 23:34:17 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/09/20 19:08:25 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/09/20 19:34:55 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,24 @@ RPN &RPN::operator=(RPN const &rhs)
 RPN::~RPN()
 {}
 
+bool	checkDigit(const std::string&	str)
+{
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		if (!std::isdigit(str[i]))
+			return (false);
+	}
+	return (true);
+}
+
+
 static int toInt(std::string const &str)
 {
 	int result;
 	std::stringstream ss(str);
 
+	if (!checkDigit(str))
+		throw std::exception();
 	ss >> result;
 	return (result);
 }
@@ -72,8 +85,8 @@ void	RPN::parsLine()
 {
 	std::stringstream	ss(this->_str);
 	std::string			tmp;
-
-	if (ss.str().size() < 2)
+	
+	if (ss.str().size() < 3)
 		throw std::exception();
 	while (ss >> tmp)
 	{

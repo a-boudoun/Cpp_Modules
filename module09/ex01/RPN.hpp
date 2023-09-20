@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 23:34:14 by aboudoun          #+#    #+#             */
-/*   Updated: 2023/04/11 21:45:03 by aboudoun         ###   ########.fr       */
+/*   Updated: 2023/09/20 19:16:37 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ class RPN
 
 		void	parsLine();
 		void	calculResult();
+		bool	checkDigit(const std::string&	str);
 };
